@@ -1,0 +1,375 @@
+<?xml version="1.0" encoding="ISO-8859-1" standalone="yes"?>
+<?xml-stylesheet type="text/xsl" href="CDA-xsl/CDA.xsl"?>
+<!--
+ Titulo:       MAIS- INFORME ATENCION PREHOSPITALARIA
+ Archivo:      AR-CDA_R2_Informe_Atencion_Prehospitalaria.xml
+ Creado por:   Kern-IT SRL
+ ********************************************************
+ Nota : Este archivo de ejemplo contiene datos representativos en un estudio de diagnostico por imágenes
+ El archivo corresponde a los datos de una persona inventada.
+ Cualquier semejanza con la realidad es una coincidencia
+ Para ilustrar tantos elementos de datos como sea posible, el escenario clínico puede no ser plausible
+ La información en este archivo no está diseñada para representar pacientes reales.
+ Este ejemplo está diseñado para usar en conjunto con la Guia de Implementación MAIS 1.0 (GIM 1.0)
+ ********************************************************
+ -->
+<ClinicalDocument xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="urn:hl7-org:v3 ../../../../../Downloads/CDAR2_IG_IHE_CONSOL_DSTU_R1dot1_2012JUL-2/Updated_CDA_Schema_Files_Extension_Support/CDA_Schema_Files/infrastructure/cda/CDA_SDTC.xsd"
+	xmlns="urn:hl7-org:v3" xmlns:cda="urn:hl7-org:v3" xmlns:sdtc="urn:hl7-org:sdtc">
+	<!-- ** CDA Header ** -->
+	<realmCode code="AR"/>
+	<typeId root="2.16.840.1.113883.1.3" extension="POCD_HD000040"/>
+	<!-- Plantilla General MAIS, y la fecha de la versión -->
+	<templateId root="2.16.840.1.113883.2.10.24.1.1.99" extension="2015-03-01"/>
+	<!-- Nota: El proximo templateID, codigo y titulo dependen del tipo especifico de documento
+		14-Atención Prehospitalaria*** -->
+	<templateId root="2.16.840.1.113883.2.10.24.1.1.14" extension="2015-03-01"/>
+	<!--  Identificador único del documento 	-  MAIS_Ref:#D02-->
+	<id extension="1027981-1" root="2.16.840.1.113883.2.10.24.2.1.9999.1"/>
+	<!-- Clasificación del Documento 			-  MAIS_Ref:#D01 -->
+	<code codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" code="52019-7"
+		displayName="Informe de Atención Prehospitalaria"/>
+	<!-- Título -->
+	<title>Hospital Ejemplo: Informe de Atención Prehospitalaria</title>
+	<!-- Fecha de Creación del Documento 		-  MAIS_Ref:#D03 -->
+	<effectiveTime value="201503181904+0300"/>
+	<!-- Código de Confidencialidad 			-  MAIS_Ref:#D04-->
+	<confidentialityCode code="N" codeSystem="2.16.840.1.113883.5.25"/>
+	<!-- Código de Lenguaje: español de Argentina -->
+	<languageCode code="es-AR"/>
+	<!-- Identificador de Documento Original -->
+	<setId extension="66027718" root="2.16.840.1.113883.2.10.24.2.1.9999.2"/>
+	<!-- Versión del Documento -->
+	<versionNumber value="1"/>
+	<!-- Datos del Paciente -->
+	<recordTarget>
+		<patientRole>
+			<!-- Identificador del Paciente #1: Tipo y Número de Documento -  MAIS_Ref:#P07 -  MAIS_Ref:#P08-->
+			<id extension="20000000" root="2.16.840.1.113883.2.10.24.4.1"/>
+			<!-- Identificador del Paciente #2: Número de Historia Clínica Prestador -->
+			<id extension="29282" root="2.16.840.1.113883.2.10.24.2.1.9999.3"/>
+			<addr use="HP">
+				<!-- Domicilio del Paciente (Calle/Nro/Depto)  MAIS_Ref:#P09 -->
+				<streetAddressLine>Callao 2378</streetAddressLine>
+				<!-- Ciudad del Paciente 					   MAIS_Ref:#P10 -->
+				<city>Del Viso</city>
+				<!-- Provincia			 					   MAIS_Ref:#P13 -->
+				<state>Buenos Aires</state>
+				<!-- Codigo Postal			 				   MAIS_Ref:#P14 -->
+				<postalCode>1195</postalCode>
+				<!-- País					 				   MAIS_Ref:#P21 -->
+				<country>AR</country>
+				<!-- Partido					 			   MAIS_Ref:#P11 -->
+				<county>Pilar</county>
+				<!-- Departamento					 		   MAIS_Ref:#P12 -->
+				<additionalLocator>Del Viso</additionalLocator>
+			</addr>
+			<!-- Teléfono del Hogar del Paciente 			   MAIS_Ref:#P22-->
+			<telecom value="tel:(5411)4444-4444" use="HP"/>
+			<!-- Datos del Paciente -->
+			<patient>
+				<!-- Apellido y Nombres -->
+				<name use="L">
+					<!-- Primer Apellido			-  MAIS_Ref:#P01-->
+					<family>Funes</family>
+					<!-- Segundo Apellido			-  MAIS_Ref:#P02-->
+					<family>Gonzalez</family>
+					<!-- Primer Nombre				-  MAIS_Ref:#P03-->
+					<given>Alberto</given>
+					<!-- Segundo Nombre				-  MAIS_Ref:#P04-->
+					<given>José</given>
+				</name>
+				<!-- Sexo 							-  MAIS_Ref:#P05-->
+				<administrativeGenderCode code="M" codeSystem="2.16.840.1.113883.5.1"
+					displayName="Femenino"/>
+				<!-- Fecha de Nacimiento 			-  MAIS_Ref:#P06-->
+				<birthTime value="20050501"/>
+			</patient>
+			<!-- Organización Prestadora -->
+			<providerOrganization>
+				<!-- Seccion 					    -  MAIS_Ref:#R06-->
+				<id root="2.16.840.1.113883.2.10.24.2.1.9999.5" extension="CAINT"/>
+				<name>GASTROENTEROLOGIA</name>
+				<!-- Sub-Especialidad				-  MAIS_Ref:#R08 -->
+				<standardIndustryClassCode code="23" displayName="CARDIOLOGIA INTERVENCIONISTA"
+					codeSystemName="2.16.840.1.113883.2.10.24.6"/>
+				<asOrganizationPartOf>
+					<!-- Departamento o Servicio 	-  MAIS_Ref:#R05-->
+					<id root="2.16.840.1.113883.2.10.24.2.1.9999.4" extension="CARD"/>
+					<!-- Especialidad 				-  MAIS_Ref:#R07-->
+					<code code="4" displayName="CARDIOLOGIA"
+						codeSystem="2.16.840.1.113883.2.10.24.5"/>
+					<wholeOrganization>
+						<!-- Organización -->
+						<id root="2.16.840.1.113883.2.10.24.2.1.9999"/>
+						<!-- Nombre de la Organización Prestadora			 -  MAIS_Ref:#R01 -->
+						<name>ORGANIZACION PRESTADORA DE PRUEBA </name>
+
+						<!-- Telefono de la Organización Prestadora 		 -  MAIS_Ref:#R04 -->
+						<telecom value="1149810000"/>
+						<addr>
+							<!-- Domicilio de la Organización Prestadora 	 -  MAIS_Ref:#R02 -->
+							<streetAddressLine>Corrientes 41000</streetAddressLine>
+							<!-- Localidad de la Organización Prestadora 	 -  MAIS_Ref:#R03 -->
+							<city>Buenos Aires</city>
+							<!-- Provincia de la Organización Prestadora 	 -  MAIS_Ref:#R09 -->
+							<state>C.A.B.A</state>
+							<!-- Codigo Postal de la Organización Prestadora -  MAIS_Ref:#R10 -->
+							<postalCode>1195</postalCode>
+						</addr>
+
+					</wholeOrganization>
+				</asOrganizationPartOf>
+			</providerOrganization>
+		</patientRole>
+	</recordTarget>
+	<!-- Datos del Autor del Informe -->
+	<author>
+
+		<!-- Fecha de creación  / Idéntica a fecha de documento-->
+		<time value="201503171904+0300"/>
+
+		<assignedAuthor>
+			<!-- Tipo y Número de Matrícula del Médico -   MAIS_Ref:#A07-->
+			<!-- Tipo y Número de Matrícula del Médico -   MAIS_Ref:#A08-->
+
+			<id extension="99999" root="2.16.840.1.113883.2.10.24.7.1"/>
+			<!-- Código de Especialidad y Subespecialidad- MAIS_Ref:#A05-->
+			<!-- Código de Especialidad y Subespecialidad- MAIS_Ref:#A06-->
+
+			<code code="MC" codeSystem="2.16.840.1.113883.2.10.24.5" displayName="Subespecialidad"/>
+
+			<telecom use="WP" value="tel:555-555-1002"/>
+			<assignedPerson>
+				<name>
+					<!-- Primer Apellido del Autor  	-  MAIS_Ref:#A01-->
+					<family>Sandoz</family>
+					<!-- Segundo Apellido del Autor  	-  MAIS_Ref:#A02-->
+					<family>Balbuena</family>
+					<!-- Primer Nombre del Autor  		-  MAIS_Ref:#A03-->
+					<given>Joaquin</given>
+					<!-- Segundo Nombre del Autor  		-  MAIS_Ref:#A04-->
+					<given>Manuel</given>
+				</name>
+			</assignedPerson>
+		</assignedAuthor>
+	</author>
+
+	<custodian>
+		<assignedCustodian>
+			<representedCustodianOrganization>
+				<id root="2.16.840.1.113883.2.10.24.2.1.9999"/>
+
+			</representedCustodianOrganization>
+		</assignedCustodian>
+	</custodian>
+	<!-- Numero de Afiliado y Cobertura -->
+	<participant typeCode="BEN">
+		<associatedEntity classCode="COVPTY">
+
+			<!-- Número de Afiliado		  		-  MAIS_Ref:#P19-->
+			<id extension="998991" root="2.16.840.1.113883.2.10.24.2.1.9999.7"/>
+			<!-- Apellido y Nombres del Titular -  MAIS_Ref:#P19-->
+			<associatedPerson>
+
+				<name> Funes Gonzalez Alberto Jose</name>
+
+			</associatedPerson>
+
+			<scopingOrganization>
+				<!-- Plan de Salud 				 -  MAIS_Ref:#P18 -->
+				<id root="2.16.840.1.113883.2.10.24.2.2.9999.6" extension="3010"/>
+				<name>PLAN DE SALUD HOSPITAL HOLANDES - PLAN 3010</name>
+				<asOrganizationPartOf>
+					<!-- Financiador 			 -  MAIS_Ref:#P17 -->
+					<id root="2.16.840.1.113883.2.10.24.2.2.9999"/>
+					<wholeOrganization>
+						<name> PLAN DE SALUD HOSPITAL HOLANDES </name>
+					</wholeOrganization>
+				</asOrganizationPartOf>
+			</scopingOrganization>
+
+		</associatedEntity>
+
+	</participant>
+	<inFulfillmentOf>
+		<order>
+			<!-- Identificador de la Orden -->
+			<id root="2.16.840.1.113883.2.10.24.10" extension="4754436"/>
+			<!-- Tipo de Estudio Solicitado		-  MAIS_Ref:#E13 -->
+			<code codeSystem="2.16.840.1.113883.2.10.24.11"
+				codeSystemName="ATENCION PREHOSPITALARIA" code="TC" displayName="CODIGO ROJO"/>
+
+		</order>
+	</inFulfillmentOf>
+	<!-- Datos del Estudio -->
+	<documentationOf typeCode="DOC">
+		<serviceEvent classCode="ENC">
+
+			<!-- Identificador otorgardo por el prestador de servicio prehospitalario -->
+			<id root="2.16.840.1.113883.2.10.24.7" extension="1784838"/>
+			<!-- Tipo de Atencion		-  MAIS_Ref:#E13 -->
+			<code codeSystem="2.16.840.1.113883.2.10.24.10"
+				codeSystemName="ATENCION PREHOSPITALARIA" code="CR" displayName="CODIGO ROJO"/>
+			<!-- Fecha de Realizacion Desde								-  MAIS_Ref:#E11 -->
+			<!-- Fecha de Realizacion Hasta								-  MAIS_Ref:#E12 -->
+
+			<effectiveTime>
+				<low value="20150120103000"/>
+				<high value="20150120203000"/>
+			</effectiveTime>
+			<!-- Atencion Domiciliaria										     -  MAIS_Ref:#E14 -->
+			<performer typeCode="PPRF">
+
+				<functionCode code="MD" codeSystem="2.16.840.1.113883.2.10.24.7"
+					codeSystemName="PARTICIPACION SERVICIOS"
+					displayName="MEDICO ATENCION DOMICILIARIA"/>
+				<assignedEntity>
+					<!-- Aqui podria ir la matricula  -->
+					<id/>
+					<assignedPerson>
+						<!-- Apellido y Nombre del médico -->
+						<name>
+							<family>REDATO</family>
+							<given>LUIS MARIO</given>
+						</name>
+					</assignedPerson>
+				</assignedEntity>
+			</performer>
+		</serviceEvent>
+	</documentationOf>
+	<componentOf>
+		<encompassingEncounter>
+			<!-- Identificador otorgardo por el prestador de servicio prehospitalario -->
+			<id root="2.16.840.1.113883.2.10.24.7" extension="1784838"/>
+			<effectiveTime>
+				<low value="20150120103000"/>
+				<high value="20150120203000"/>
+			</effectiveTime>
+			<!-- Ubicacion Primaria de la Atención / Domicilio del paciente-->
+			<location>
+				<healthCareFacility classCode="DSDLOC">
+					<location>
+						<!-- Nombre del Lugar donde se Atendio al Paciente -->
+						<name>
+							Domicilio del Paciente
+						</name>
+						<!-- ATENCION DOMICILIARIA -->
+						<addr use="HP">
+							<!-- Domicilio del Paciente (Calle/Nro/Depto)  MAIS_Ref:#P09 -->
+							<streetAddressLine>Callao 2378</streetAddressLine>
+							<!-- Ciudad del Paciente 					   MAIS_Ref:#P10 -->
+							<city>Del Viso</city>
+							<!-- Provincia			 					   MAIS_Ref:#P13 -->
+							<state>Buenos Aires</state>
+							<!-- Codigo Postal			 				   MAIS_Ref:#P14 -->
+							<postalCode>1195</postalCode>
+							<!-- País					 				   MAIS_Ref:#P21 -->
+							<country>AR</country>
+							<!-- Partido					 			   MAIS_Ref:#P11 -->
+							<county>Pilar</county>
+							<!-- Departamento					 		   MAIS_Ref:#P12 -->
+							<additionalLocator>Del Viso</additionalLocator>
+						</addr>
+						
+					</location>
+				</healthCareFacility>
+				
+			</location>
+		</encompassingEncounter>
+	</componentOf>
+	<!-- Cuerpo de CDA : Contenido Clinico -->
+	
+	<component>
+		<structuredBody>
+
+
+			<!-- ******************************************************** MOTIVO DE CONSULTA ************************************ -->
+			<component>
+				<section>
+					<templateId root="2.16.840.1.113883.2.10.24.1.2.2" extension="2015-03-01"/>
+					<code code="46239-0" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"
+						displayName="MOTIVO DE CONSULTA"/>
+					<title>MOTIVO DE CONSULTA</title>
+					<text>
+						<content>DOLOR PRECORDIAL</content>
+					</text>
+				</section>
+			</component>
+			<!-- ******************************************************** EXAMEN FISICO ************************************ -->
+			<component>
+				<section>
+					<templateId root="2.16.840.1.113883.2.10.24.1.2.2" extension="2015-03-01"/>
+					<code code="11384-5" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"
+						displayName="EXAMEN FISICO"/>
+					<title>EXAMEN FISICO</title>
+					<text>
+						<content>TA 160/90</content>
+					</text>
+				</section>
+			</component>
+			<!-- ******************************************************** INFORME ECG ************************************ -->
+			<component>
+				<section>
+					<templateId root="2.16.840.1.113883.2.10.24.1.2.2" extension="2015-03-01"/>
+					<code code="18844-1" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"
+						displayName="INFORME ECG"/>
+					<title>INFORME ECG</title>
+					<text>
+						<content>NORMAL</content>
+					</text>
+				</section>
+			</component>
+			<!-- ******************************************************** DIAGNOSTICOS PRESUNTIVOS ************************************ -->
+			<component>
+				<section>
+					<templateId root="2.16.840.1.113883.2.10.24.1.2.2" extension="2015-03-01"/>
+					<code code="18844-1" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"
+						displayName="DIAGNOSTICOS PRESUNTIVOS"/>
+					<title>DIAGNOSTICOS PRESUNTIVOS</title>
+					<text>
+						<content>HIPERTENSION</content>
+					</text>
+				</section>
+			</component>
+			<!-- ******************************************************** PROCEDIMIENTOS REALIZADOS ************************************ -->
+			<component>
+				<section>
+					<templateId root="2.16.840.1.113883.2.10.24.1.2.2" extension="2015-03-01"/>
+					<code code="62387-6" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"
+						displayName="PROCEDIMIENTOS REALIZADOS"/>
+					<title>PROCEDIMIENTOS REALIZADOS</title>
+					<text>
+						<content>ECG</content>
+					</text>
+				</section>
+			</component>
+			<!-- ******************************************************** MEDICACION ADMINISTRADA ************************************ -->
+			<component>
+				<section>
+					<templateId root="2.16.840.1.113883.2.10.24.1.2.2" extension="2015-03-01"/>
+					<code code="10160-0" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"
+						displayName="MEDICACION ADMINISTRADA"/>
+					<title>MEDICACION ADMINISTRADA</title>
+					<text>
+						<content>HIPOTENSOR</content>
+					</text>
+				</section>
+			</component>
+			<!-- ********************************************************INDICACIONES ************************************ -->
+			<component>
+				<section>
+					<templateId root="2.16.840.1.113883.2.10.24.1.2.2" extension="2015-03-01"/>
+					<code code="10183-2" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"
+						displayName="INDICACIONES"/>
+					<title>INDICACIONES</title>
+					<text>
+						<content>REPOSO</content>
+					</text>
+				</section>
+			</component>
+			
+
+		</structuredBody>
+	</component>
+</ClinicalDocument>

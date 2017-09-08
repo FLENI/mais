@@ -1,0 +1,823 @@
+<?xml version="1.0" encoding="utf-8"?><!-- Do NOT edit this HTML directly: it was generated via an XSLT transformation from a CDA Release 2 or 3 XML document. -->
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="es">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+      <title>Hospital Ejemplo: Epicrisis</title><!-- General CSS -->
+      <style type="text/css" media="all">
+                    *{
+                        font-family: Verdana, Tahoma, sans-serif;
+                        font-size: 9pt;
+                    }
+                    body{
+                        padding: 2px;
+                        color: #003366;
+                        background-color: #ffffff;
+                        font-size: 9pt;
+                    }
+                    #documentheader,
+                    #documentbody,
+                    #documentfooter{
+                        float: top;
+                        width: 100%;
+                    }
+                    #documentheader{
+                        border-bottom: 1px solid grey;
+                        margin-bottom: 1em;
+                    }
+                    #documentfooter{
+                        border-top: 1px solid grey;
+                        margin-top: 1em;
+                    }
+                    a{
+                        color: #003366;
+                        background-color: #ffffff;
+                    }
+                    h1{
+                        font-size: 12pt;
+                        font-weight: bold;
+                    }
+                    h1.title{
+                        text-align: center;
+                    }
+                    h2{
+                        font-size: 11pt;
+                        font-weight: bold;
+                    }
+                    h3{
+                        font-size: 10pt;
+                        font-weight: bold;
+                    }
+                    h4{
+                        font-size: 9pt;
+                        font-weight: bold;
+                    }
+                    h5{
+                        font-size: 9pt;
+                        font-weight: bold;
+                    }
+                    h6{
+                        font-size: 9pt;
+                        font-weight: bold;
+                    }
+                    hr{
+                        width: 100%;
+                    }
+                    span {
+                        font-size: 9pt; /* IE8 hack: doesn't understand inheritance */
+                        display: inline; /* IE8 hack: would go to next line otherwise */
+                    }
+                    table{
+                        line-height: 10pt;
+                        width: 100%;
+                    }
+                    tr{
+                        background-color: #ccccff;
+                    }
+                    td{
+                        font-size: 9pt; /* IE8 hack: doesn't understand inheritance */
+                        padding: 0.1cm 0.2cm;
+                        vertical-align: top;
+                    }
+                    .header_table{
+                        border: 1pt solid #00008b;
+                    }
+                    .narr_table{
+                        width: 100%;
+                    }
+                    .narr_tr{
+                        background-color: #ffffcc;
+                    }
+                    .narr_th{
+                        background-color: #ffd700;
+                        font-size: 9pt; /* IE8 hack: doesn't understand inheritance */
+                    }
+                    .narr_footnote{
+                        font-size: 8pt;
+                        font-style: italic;
+                    }
+                    .td_label{
+                        font-size: 9pt; /* IE8 hack: doesn't understand inheritance */
+                        font-weight: bold;
+                        color: white;
+                        background-color: #3399ff;
+                    }
+                    .td_label_width{
+                        width: 20%;
+                    }
+                    .revision_insert{
+                        text-decoration: underline overline;
+                    }
+                    .revision_insert_final{
+                    }
+                    .revision_delete{
+                        text-decoration: line-through;
+                    }
+                    .revision_delete_final{
+                        display: none;
+                    }
+                    .span_button {
+                        display: table-cell;
+                        cursor: pointer;
+                        border: 2pt inset #00008b;
+                        border-radius: 15px;
+                        -moz-border-radius: 15px;
+                        padding: 0.1cm 0.2cm;
+                        background-color: #ccccff;
+                        font-weight: bold;
+                        vertical-align: baseline;
+                        width: 150px;
+                    }
+                    </style><!-- Stylecode CSS -->
+      <style type="text/css" media="all">
+                    .Bold{
+                        font-weight: bold;
+                    }
+                    .Italics{
+                        font-style: italic;
+                    }
+                    .Underline{
+                        text-decoration: underline;
+                    }
+                    .Emphasis{
+                        font-weight: bold;
+                        font-style: italic;
+                    }
+                    .Lrule{
+                        border-left-width: 2px;
+                        border-left-style: solid;
+                    }
+                    .Rrule{
+                        border-right-width: 2px;
+                        border-right-style: solid;
+                    }
+                    .Toprule{
+                        border-top-width: 2px;
+                        border-top-style: solid;
+                    }
+                    .Botrule{
+                        border-bottom-width: 2px;
+                        border-bottom-style: solid;
+                    }
+                    .Arabic{
+                        list-style: arabic;
+                    }
+                    .LittleRoman{
+                        list-style: lower-roman;
+                    }
+                    .BigRoman{
+                        list-style: upper-roman;
+                    }
+                    .LittleAlpha{
+                        list-style: lower-alpha;
+                    }
+                    .BigAlpha{
+                        list-style: upper-alpha
+                    }
+                    .Disc{
+                        list-style: disc;
+                    }
+                    .Circle{
+                        list-style: circle;
+                    }
+                    .Square{
+                        list-style: square;
+                    }</style><!-- Revision Toggle CSS -->
+      <style type="text/css" media="print">
+                    #buttontable, #revisionToggleOn, #revisionToggleOff {
+                        display: none;
+                    }
+                </style><!-- Table of Contents CSS -->
+      <style type="text/css" media="screen">
+                    #nav, #nav ul {
+                        padding: 0;
+                        margin: 0;
+                        list-style: none;
+                    }
+                    
+                    #nav li {
+                        float: left;
+                        width: 150px;
+                    }
+                    
+                    #nav ul {
+                        position: absolute;
+                        width: 150px;
+                        left: -1000px;
+                    }
+                    
+                    #nav li:hover ul, #nav li.ie_does_hover ul {
+                        left: auto;
+                        background-position: 0 0;
+                    }
+                    
+                    #nav * a {
+                        display: block;
+                        padding: 2px 8px;
+                        text-decoration: none;
+                        font: bold 11px Verdana;
+                    }
+                    
+                    #nav ul * a {
+                        font-weight: bold;
+                        color: black;
+                        background-color: #ccccff;
+                        cursor: pointer;
+                    }
+                    
+                    #nav ul ul a:link, #nav ul ul a:visited {
+                        font-weight: normal;
+                        color: black;
+                        background-color: #ccccff;
+                        cursor: pointer;
+                    }
+                    
+                    #nav * li a:hover, #nav * li a:active {
+                        /*font-weight: normal;*/
+                        color: white;
+                        background-color: #3399ff;
+                        cursor: pointer;
+                    }
+                    
+                    #nav * li {
+                        border-left: 2px solid white;
+                    }
+                    
+                    #nav * ul li {
+                        border-top: 2px solid white;
+                        border-left: 0;
+                    }
+                    
+                    /* IE only hack */
+                    * html ul li, * html ul ul li{
+                        border-bottom: 2px solid white;
+                    }
+                    
+                    * html ul ul li{
+                        border-top: 0;
+                    }
+                    /* End IE only hack */
+                </style><!-- Javascript for Revisions switch -->
+      <script type="text/javascript">
+                        function showReviewMarks() {
+                            var allHTMLTags=document.getElementsByTagName("*");
+                            for (i in allHTMLTags) {
+                                //Get all tags with the specified class name.
+                                if (allHTMLTags[i].className=='revision_insert_final') {
+                                    allHTMLTags[i].className = 'revision_insert';
+                                }
+                                if (allHTMLTags[i].className=='revision_delete_final') {
+                                    allHTMLTags[i].className = 'revision_delete';
+                                }
+                            }
+                            toggle('revisionToggleOn');
+                            toggle('revisionToggleOff');
+                        }
+                        function hideReviewMarks() {
+                            var allHTMLTags=document.getElementsByTagName("*");
+                            for (i in allHTMLTags) {
+                                //Get all tags with the specified class name.
+                                if (allHTMLTags[i].className=='revision_insert') {
+                                    allHTMLTags[i].className = 'revision_insert_final';
+                                }
+                                if (allHTMLTags[i].className=='revision_delete') {
+                                    allHTMLTags[i].className = 'revision_delete_final';
+                                }
+                            }
+                            toggle('revisionToggleOn');
+                            toggle('revisionToggleOff');
+                        }
+                        function toggle(obj) {
+                            var el = document.getElementById(obj);
+                            el.style.display = (el.style.display != 'none' ? 'none' : '' );
+                        }
+                    </script><!-- Javascript for Table of Contents menu -->
+      <script language="javascript" type="text/javascript">
+                        sfHover = function() {
+                            var sfEls = document.getElementById("nav").getElementsByTagName("li");
+                            for (i in sfEls) {
+                                sfEls[i].onmouseover=function() {
+                                    this.className+=" ie_does_hover";
+                                }
+                                sfEls[i].onmouseout=function() {
+                                    this.className=this.className.replace(new RegExp(" ie_does_hover"), "");
+                                }
+                            }
+                        }
+                        if (window.attachEvent) window.attachEvent("onload", sfHover);
+                    </script>
+   </head>
+   <body>
+      <div id="documentheader">
+         <a name="toc"/>
+         <h1 class="title">Hospital Ejemplo: Epicrisis</h1>
+         <table xmlns:xhtml="http://www.w3.org/1999/xhtml" class="header_table">
+            <tbody>
+               <tr>
+                  <td class="td_label">Paciente</td>
+                  <td class="td_label">
+                     <span style="float:left;">:  FUNES  GONZALEZ  Alberto  José  </span>
+                     <span style="float:right;">
+                        <i>Fecha de Nacimiento: </i>
+                        <b>Mayo  1, 2005 <span title="Al momento de la creación del documento"> (9años)</span>
+                        </b>  <i>Género: </i>
+                        <b>Masculino</b>  <i>ID paciente: </i>
+                        <span title="20000000 (2.16.840.1.113883.2.10.24.4.1) &#xA;29282 (2.16.840.1.113883.2.10.24.2.1.9999.3) ">20000000 (2.16.840.1.113883.2.10.24.4.1) , 29282 (2.16.840.1.113883.2.10.24.2.1.9999.3) </span>
+                     </span>
+                  </td>
+               </tr>
+               <tr>
+                  <td colspan="2">
+                     <i>Autor: </i>
+                     <b> SANDOZ  BALBUENA  Joaquin  Manuel </b>, <i>Generado el: </i>
+                     <b>Marzo  17, 2015, 19:04 +0300 </b>
+                  </td>
+               </tr>
+            </tbody>
+         </table>
+         <div id="buttontable">
+            <table class="header_table" border="0" cellpadding="0" cellspacing="0">
+               <tbody>
+                  <tr style="background-color:#ffffff;">
+                     <td xmlns:xhtml="http://www.w3.org/1999/xhtml"/>
+                     <td xmlns:xhtml="http://www.w3.org/1999/xhtml" width="35%">
+                        <ul id="nav">
+                           <li style="list-style: none;">
+                              <div class="span_button">Tabla de Contenidos ∇</div>
+                              <ul>
+                                 <li>
+                                    <a href="#section_1">1 MOTIVO DE INGRESO</a>
+                                 </li>
+                                 <li>
+                                    <a href="#section_2">2 DIAGNOSTICO DE INGRESO</a>
+                                 </li>
+                                 <li>
+                                    <a href="#section_3">3 ANTECEDENTES FAMILIARES</a>
+                                 </li>
+                                 <li>
+                                    <a href="#section_4">4 ANTECEDENTES PERSONALES</a>
+                                 </li>
+                                 <li>
+                                    <a href="#section_5">5 HISTORIA DE LA ENFERMEDAD ACTUAL</a>
+                                 </li>
+                                 <li>
+                                    <a href="#section_6">6 EXAMEN FISICO</a>
+                                 </li>
+                                 <li>
+                                    <a href="#section_7">7 CURSO CLINICO</a>
+                                 </li>
+                                 <li>
+                                    <a href="#section_8">8 DIAGNOSTICO DE EGRESO </a>
+                                 </li>
+                                 <li>
+                                    <a href="#section_9">9 MEDICACION AL ALTA</a>
+                                 </li>
+                                 <li>
+                                    <a href="#section_10">10 INDICACIONES AL ALTA</a>
+                                 </li>
+                                 <li>
+                                    <a href="#section_11">11 ESTUDIOS COMPLEMENTARIOS</a>
+                                 </li>
+                                 <li>
+                                    <a href="#section_12">12 PLAN DE SEGUIMIENTO</a>
+                                 </li>
+                                 <li>
+                                    <a href="#section_13">13 PROCEDIMIENTOS / INTERVENCIONES</a>
+                                 </li>
+                                 <li>
+                                    <a href="#section_14">14 COMPLICACIONES</a>
+                                 </li>
+                                 <li>
+                                    <a href="#section_15">15 DETALLE DE UBICACIONES</a>
+                                 </li>
+                                 <li>
+                                    <a href="#section_16">16 INFORMACION DEMOGRAFICA</a>
+                                 </li>
+                              </ul>
+                           </li>
+                        </ul>
+                     </td>
+                  </tr>
+               </tbody>
+            </table>
+         </div>
+      </div>
+      <div id="documentbody">
+         <a xmlns:xhtml="http://www.w3.org/1999/xhtml" name="section_1"/>
+         <h3 xmlns:xhtml="http://www.w3.org/1999/xhtml" title="Chief complaint+Reason for visit">
+            <a href="#toc">1 MOTIVO DE INGRESO</a>
+         </h3>
+         <div xmlns:xhtml="http://www.w3.org/1999/xhtml">
+						
+            <p>Dolor persistente en lado izquierdo del pecho</p>
+					
+         </div>
+         <a xmlns:xhtml="http://www.w3.org/1999/xhtml" name="section_2"/>
+         <h3 xmlns:xhtml="http://www.w3.org/1999/xhtml" title="Diagnostico de Ingreso">
+            <a href="#toc">2 DIAGNOSTICO DE INGRESO</a>
+         </h3>
+         <div xmlns:xhtml="http://www.w3.org/1999/xhtml">
+						
+            <span>Infarto agudo de miocardio</span>
+					
+         </div>
+         <a xmlns:xhtml="http://www.w3.org/1999/xhtml" name="section_3"/>
+         <h3 xmlns:xhtml="http://www.w3.org/1999/xhtml" title="History of family member diseases">
+            <a href="#toc">3 ANTECEDENTES FAMILIARES</a>
+         </h3>
+         <div xmlns:xhtml="http://www.w3.org/1999/xhtml">
+						
+            <p>Padre fallecido a los 57 años (Infarto de miocardio)</p>
+						
+            <p>Madre y tíos diabéticos</p>
+					
+         </div>
+         <a xmlns:xhtml="http://www.w3.org/1999/xhtml" name="section_4"/>
+         <h3 xmlns:xhtml="http://www.w3.org/1999/xhtml" title="History of past illness">
+            <a href="#toc">4 ANTECEDENTES PERSONALES</a>
+         </h3>
+         <div xmlns:xhtml="http://www.w3.org/1999/xhtml">
+						
+            <p>Operado de apéndice en 2010</p>
+					
+         </div>
+         <a xmlns:xhtml="http://www.w3.org/1999/xhtml" name="section_5"/>
+         <h3 xmlns:xhtml="http://www.w3.org/1999/xhtml" title="History of present illness">
+            <a href="#toc">5 HISTORIA DE LA ENFERMEDAD ACTUAL</a>
+         </h3>
+         <div xmlns:xhtml="http://www.w3.org/1999/xhtml">
+						
+            <p>El paciente reporta limitaciones para respirar luego de caminar
+							unas cuadras </p>
+						
+            <p>Laboratorio dos dias antes del ingreso: Glucose 110, creatinina
+							1.1, electrolitos normales. Hematocrit 29%. Bcos 7300, plaquetas
+							256,000. Urocultivo y analisis de orina normales </p>
+					
+         </div>
+         <a xmlns:xhtml="http://www.w3.org/1999/xhtml" name="section_6"/>
+         <h3 xmlns:xhtml="http://www.w3.org/1999/xhtml" title="Review of systems">
+            <a href="#toc">6 EXAMEN FISICO</a>
+         </h3>
+         <div xmlns:xhtml="http://www.w3.org/1999/xhtml">
+						
+            <p>Niega fiebre </p>
+					
+         </div>
+         <a xmlns:xhtml="http://www.w3.org/1999/xhtml" name="section_7"/>
+         <h3 xmlns:xhtml="http://www.w3.org/1999/xhtml" title="Hospital course">
+            <a href="#toc">7 CURSO CLINICO</a>
+         </h3>
+         <div xmlns:xhtml="http://www.w3.org/1999/xhtml"> Paciente que se presenta con dolor precordial. Luego de examen físico,
+						imagenes y laboratorio, se deriva a hemodinamia. Se realiza estudio
+						hemodinamico y se coloca stent. Paciente de alta con dieta y medicación de
+						protocolo
+						
+						<table class="narr_table" cellspacing="1" cellpadding="1" border="1" width="100%">
+							
+               <thead>
+								
+                  <tr class="narr_tr">
+									
+                     <th class="narr_th">Dias Totales de Estadía</th>
+									
+                     <th class="narr_th">Dias de Estadía Por Otras Circunstancias</th>
+									
+                     <th class="narr_th">Causa Externa de Traumatismo u Otros Efectos Adversos</th>
+								
+                  </tr>
+							
+               </thead>
+							
+               <tbody>
+								
+                  <tr class="narr_tr">
+									
+                     <td>5</td>
+									
+                     <td>0</td>
+									
+                     <td>-</td>
+								
+                  </tr>
+							
+               </tbody>
+						
+            </table>
+						
+					
+         </div>
+         <a xmlns:xhtml="http://www.w3.org/1999/xhtml" name="section_8"/>
+         <h3 xmlns:xhtml="http://www.w3.org/1999/xhtml" title="Hospital discharge Dx">
+            <a href="#toc">8 DIAGNOSTICO DE EGRESO </a>
+         </h3>
+         <div xmlns:xhtml="http://www.w3.org/1999/xhtml">
+						
+            <span>Infarto Agudo de Miocardio</span>
+						
+            <span>Insuficiencia Cardiaca</span>
+					
+         </div>
+         <a xmlns:xhtml="http://www.w3.org/1999/xhtml" name="section_9"/>
+         <h3 xmlns:xhtml="http://www.w3.org/1999/xhtml" title="Medicación al Alta">
+            <a href="#toc">9 MEDICACION AL ALTA</a>
+         </h3>
+         <div xmlns:xhtml="http://www.w3.org/1999/xhtml"> Ibuprofeno 600mg Oral, 1 capsula según necesidad </div>
+         <a xmlns:xhtml="http://www.w3.org/1999/xhtml" name="section_10"/>
+         <h3 xmlns:xhtml="http://www.w3.org/1999/xhtml" title="INDICACIONES AL ALTA">
+            <a href="#toc">10 INDICACIONES AL ALTA</a>
+         </h3>
+         <div xmlns:xhtml="http://www.w3.org/1999/xhtml"> Tomar la medicación según lo prescripto. Consulta en el servicio en 15
+						días Llamar al médico si tiene mareos o problemas para respirar </div>
+         <a xmlns:xhtml="http://www.w3.org/1999/xhtml" name="section_11"/>
+         <h3 xmlns:xhtml="http://www.w3.org/1999/xhtml" title="Hospital discharge studies summary">
+            <a href="#toc">11 ESTUDIOS COMPLEMENTARIOS</a>
+         </h3>
+         <div xmlns:xhtml="http://www.w3.org/1999/xhtml">
+						
+            <table class="narr_table" cellspacing="1" cellpadding="1" border="1" width="100%">
+							
+               <thead>
+								
+                  <tr class="narr_tr">
+									
+                     <th class="narr_th">Información de laboratorio</th>
+									
+                     <th class="narr_th">Química</th>
+								
+                  </tr>
+							
+               </thead>
+							
+               <tbody>
+								
+                  <tr class="narr_tr">
+									
+                     <td>Potasio</td>
+									
+                     <td>4.0</td>
+								
+                  </tr>
+								
+                  <tr class="narr_tr">
+									
+                     <td>Sodio (135-145meq/l)</td>
+									
+                     <td>140</td>
+								
+                  </tr>
+							
+               </tbody>
+						
+            </table>
+						
+            <br/>
+						
+            <table class="narr_table" cellspacing="1" cellpadding="1" border="1" width="100%">
+							
+               <thead>
+								
+                  <tr class="narr_tr">
+									
+                     <th class="narr_th">Otros Exámenes</th>
+									
+                     <th class="narr_th">Resultados</th>
+								
+                  </tr>
+							
+               </thead>
+							
+               <tbody>
+								
+                  <tr class="narr_tr">
+									
+                     <td>Estudio Hemodinámico</td>
+									
+                     <td>Resultado</td>
+								
+                  </tr>
+							
+               </tbody>
+						
+            </table>
+					
+         </div>
+         <a xmlns:xhtml="http://www.w3.org/1999/xhtml" name="section_12"/>
+         <h3 xmlns:xhtml="http://www.w3.org/1999/xhtml" title="Plan of treatment">
+            <a href="#toc">12 PLAN DE SEGUIMIENTO</a>
+         </h3>
+         <div xmlns:xhtml="http://www.w3.org/1999/xhtml"> Revisión en 15 días </div>
+         <a xmlns:xhtml="http://www.w3.org/1999/xhtml" name="section_13"/>
+         <h3 xmlns:xhtml="http://www.w3.org/1999/xhtml" title="History of Procedures ({Provider})">
+            <a href="#toc">13 PROCEDIMIENTOS / INTERVENCIONES</a>
+         </h3>
+         <div xmlns:xhtml="http://www.w3.org/1999/xhtml"> Colocación de Stent </div>
+         <a xmlns:xhtml="http://www.w3.org/1999/xhtml" name="section_14"/>
+         <h3 xmlns:xhtml="http://www.w3.org/1999/xhtml" title="Complications">
+            <a href="#toc">14 COMPLICACIONES</a>
+         </h3>
+         <div xmlns:xhtml="http://www.w3.org/1999/xhtml">
+						
+            <p>No se presentan </p>
+					
+         </div>
+         <a xmlns:xhtml="http://www.w3.org/1999/xhtml" name="section_15"/>
+         <h3 xmlns:xhtml="http://www.w3.org/1999/xhtml" title="DETALLE DE UBICACIONES">
+            <a href="#toc">15 DETALLE DE UBICACIONES</a>
+         </h3>
+         <div xmlns:xhtml="http://www.w3.org/1999/xhtml">
+						
+            <table class="narr_table" cellspacing="1" cellpadding="1">
+							
+               <tbody>
+								
+                  <tr class="narr_tr">
+									
+                     <th class="narr_th">Fecha Desde</th>
+									
+                     <th class="narr_th">Fecha Desde</th>
+									
+                     <th class="narr_th">Ubicación</th>
+								
+                  </tr>
+							
+               </tbody>
+							
+               <tbody>
+								
+                  <tr class="narr_tr">
+									
+                     <td>20-02-2015 10:30</td>
+									
+                     <td>21-02-2015 10:30</td>
+									
+                     <td>Cama 201 - Habitación 20 - Clínica Médica</td>
+
+								
+                  </tr>
+								
+                  <tr class="narr_tr">
+									
+                     <td>21-02-2015 10:30</td>
+									
+                     <td>23-02-2015 07:30</td>
+									
+                     <td>Cama 305 - Habitación 30 - Cardiología</td>
+
+								
+                  </tr>
+								
+                  <tr class="narr_tr">
+									
+                     <td>23-02-2015 07:30</td>
+									
+                     <td>25-02-2015 10:30</td>
+									
+                     <td>Cama 933 - UCI</td>
+
+								
+                  </tr>
+								
+                  <tr class="narr_tr">
+									
+                     <td>25-02-2015 07:30</td>
+									
+                     <td>27-02-2015 10:30</td>
+									
+                     <td>Cama 201 - Habitación 20 - Clínica Médica</td>
+
+								
+                  </tr>
+							
+               </tbody>
+						
+            </table>
+					
+         </div>
+         <a xmlns:xhtml="http://www.w3.org/1999/xhtml" name="section_16"/>
+         <h3 xmlns:xhtml="http://www.w3.org/1999/xhtml" title="Información Demográfica">
+            <a href="#toc">16 INFORMACION DEMOGRAFICA</a>
+         </h3>
+         <div xmlns:xhtml="http://www.w3.org/1999/xhtml">
+						
+            <table class="narr_table" cellspacing="1" cellpadding="1" border="1" width="100%">
+							
+               <thead>
+								
+                  <tr class="narr_tr">
+									
+                     <th class="narr_th">Nivel de Instrucción</th>
+									
+                     <th class="narr_th">Situacion Laboral</th>
+									
+                     <th class="narr_th">Ocupación Habitual</th>
+								
+                  </tr>
+							
+               </thead>
+							
+               <tbody>
+								
+                  <tr class="narr_tr">
+									
+                     <td>UNIVERSITARIA</td>
+									
+                     <td>EMPLEADO</td>
+									
+                     <td>CONTADOR PUBLICO</td>
+								
+                  </tr>
+							
+               </tbody>
+						
+            </table>
+					
+         </div>
+      </div>
+      <div id="documentfooter">
+         <table xmlns:xhtml="http://www.w3.org/1999/xhtml" class="header_table">
+            <tbody>
+               <tr>
+                  <td class="td_label td_label_width">Identificador del Documento</td>
+                  <td width="30%">1029988-1 (2.16.840.1.113883.2.10.24.2.1.9999.1) </td>
+                  <td class="td_label td_label_width">Creado el</td>
+                  <td width="30%">Marzo  17, 2015, 19:04 +0300 </td>
+               </tr>
+            </tbody>
+         </table>
+         <table xmlns:xhtml="http://www.w3.org/1999/xhtml" class="header_table">
+            <tbody>
+               <tr>
+                  <td class="td_label td_label_width">Paciente</td>
+                  <td colspan="3">:  FUNES  GONZALEZ  Alberto  José </td>
+               </tr>
+               <tr>
+                  <td class="td_label td_label_width">Fecha de Nacimiento</td>
+                  <td width="30%">Mayo  1, 2005  (9años)</td>
+                  <td class="td_label td_label_width">Género</td>
+                  <td>Masculino</td>
+               </tr>
+               <tr>
+                  <td class="td_label">Detalles del Contacto</td>
+                  <td>Hogar: Callao 2378<br/>Del Viso, Buenos Aires<br/>1195<br/>AR<br/>Pilar<br/>Del Viso<br/>Tel Hogar: (5411)4444-4444</td>
+                  <td class="td_label td_label_width">IDs paciente</td>
+                  <td>20000000 (2.16.840.1.113883.2.10.24.4.1) <br/>29282 (2.16.840.1.113883.2.10.24.2.1.9999.3) </td>
+               </tr>
+            </tbody>
+         </table>
+         <table xmlns:xhtml="http://www.w3.org/1999/xhtml" class="header_table">
+            <tbody>
+               <tr>
+                  <td class="td_label td_label_width">Atención médica</td>
+                  <td width="80%" colspan="3"/>
+               </tr>
+            </tbody>
+         </table>
+         <table xmlns:xhtml="http://www.w3.org/1999/xhtml" class="header_table">
+            <tbody>
+               <tr>
+                  <td class="td_label">Autor</td>
+                  <td width="80%"> SANDOZ  BALBUENA  Joaquin  Manuel  - Código: Subespecialidad</td>
+               </tr>
+               <tr>
+                  <td class="td_label">Detalles del Contacto</td>
+                  <td>Tel Laboral: 555-555-1002</td>
+               </tr>
+            </tbody>
+         </table>
+         <table xmlns:xhtml="http://www.w3.org/1999/xhtml" class="header_table">
+            <tbody>
+               <tr>
+                  <td class="td_label td_label_width">Número de Episodio</td>
+                  <td width="30%">9937012 (2.16.840.1.113883.2.10.24.2.1.9999.8) </td>
+                  <td class="td_label td_label_width">Tipo de Episodio</td>
+                  <td width="30%">Internación (Rutina)</td>
+               </tr>
+               <tr>
+                  <td class="td_label td_label_width">Fecha del Episodio</td>
+                  <td width="30%">desde Septiembre  9, 2014, 19:04 +0500  hasta Septiembre  16, 2014, 19:04 +0500 </td>
+                  <td class="td_label td_label_width">Lugar del Episodio</td>
+                  <td> Sector 10 - Cama 1012 </td>
+               </tr>
+            </tbody>
+         </table>
+         <table xmlns:xhtml="http://www.w3.org/1999/xhtml" class="header_table">
+            <tbody>
+               <tr>
+                  <td class="td_label td_label_width">Beneficiario</td>
+                  <td width="80%"> Funes Gonzalez Alberto Jose, Identificador: 998991 (2.16.840.1.113883.2.10.24.2.1.9999.7) <br/>Organización: PLAN DE SALUD HOSPITAL HOLANDES - PLAN 3010, Identificador: 3010 (2.16.840.1.113883.2.10.24.2.2.9999.6) </td>
+               </tr>
+            </tbody>
+         </table>
+         <table xmlns:xhtml="http://www.w3.org/1999/xhtml" class="header_table">
+            <tbody>
+               <tr>
+                  <td class="td_label td_label_width">Custodio</td>
+                  <td width="80%">2.16.840.1.113883.2.10.24.2.1.9999 </td>
+               </tr>
+            </tbody>
+         </table>
+      </div>
+   </body>
+</html>
